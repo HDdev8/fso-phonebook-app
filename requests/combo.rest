@@ -7,7 +7,7 @@ GET http://localhost:3001/info
 GET http://localhost:3001/api/persons
 
 ###
-GET http://localhost:3001/api/persons/:id
+GET http://localhost:3001/api/persons/1
 
 ###
 POST http://localhost:3001/info HTTP/1.1
@@ -23,7 +23,7 @@ POST http://localhost:3001/api/persons HTTP/1.1
 content-type: application/json
 
 {   
-    "name": "Num Last",
+    "name": "First Last",
     "number": "1-111-111-1111"
 }
 
