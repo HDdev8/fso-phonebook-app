@@ -15,18 +15,26 @@ Content-Type: application/json
 
 {
     "content":"Phonebook has info for 2 people",
-    "date": "Wed, 21 Oct 2015 18:27:50 GMT",
+    "date": "Wed, 21 Oct 2015 18:27:50 GMT"
 }
-
 
 ###
 POST http://localhost:3001/api/persons HTTP/1.1
 content-type: application/json
 
-{
-    "name": "First Last",
-    "number": "1-800-123-4567",
+{   
+    "name": "Num Last",
+    "number": "1-111-111-1111"
 }
 
 ###
-DELETE http://localhost:3001/api/persons/:id
+PUT http://localhost:3001/api/persons/3 HTTP/1.1
+content-type: application/json
+
+{   "id": 3,
+    "name": "Dan Abramov",
+    "number": "1-800-123-4567"
+}
+
+###
+DELETE http://localhost:3001/api/persons/3

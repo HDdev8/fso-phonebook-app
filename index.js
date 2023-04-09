@@ -23,29 +23,28 @@ const requestTime = (req, res, next) => {
 };
 app.use(requestTime);
 
-app.get("/", (request, response) => {
-  // response.send("<h1>root</h1>");
-  response.json();
+app.get("/", (req, res) => {
+  res.json();
 });
 
-app.get("/api/persons", (request, response) => {
-  response.json(persons);
+app.get("/api/persons", (req, res) => {
+  res.json(persons);
 });
 
-app.get("/api/persons/:id", (request, response) => {
-  const id = Number(request.params.id);
+app.get("/api/persons/:id", (req, res) => {
+  const id = Number(req.params.id);
   const person = persons.find((person) => person.id === id);
   if (person) {
-    response.json(person);
+    res.json(person);
   } else {
-    response.status(404).end();
+    res.status(404).end();
   }
 });
 
-app.delete("/api/persons/:id", (request, response) => {
-  const id = Number(request.params.id);
+app.delete("/api/persons/:id", (req, res) => {
+  const id = Number(req.params.id);
   persons = persons.filter((person) => person.id !== id);
-  response.status(204).end();
+  res.status(204).end();
 });
 
 const generateId = () => {
@@ -53,10 +52,10 @@ const generateId = () => {
   return maxId + 1;
 };
 
-app.post("/api/persons", (request, response) => {
-  const body = request.body;
+app.post("/api/persons", (req, res) => {
+  const body = req.body;
   if (!body.name) {
-    return response.status(400).json({
+    return res.status(400).json({
       error: "name missing",
     });
   }
@@ -66,19 +65,18 @@ app.post("/api/persons", (request, response) => {
     number: body.number,
   };
 
-  let personEntry = persons.filter((p) => p.name === person.name);
-  console.log(personEntry);
+  let personEntry = persons.filter((p) => p.name === body.name);
 
   if (person.name.length < 1) {
-    return response.status(400).json({
+    return res.status(400).json({
       error: "name missing",
     });
   } else if (person.number.length < 1) {
-    return response.status(400).json({
+    return res.status(400).json({
       error: "number missing",
     });
   } else if (personEntry.length > 0) {
-    return response.status(400).json({
+    return res.status(400).json({
       error: "name must be unique",
     });
   } else if (
@@ -87,8 +85,20 @@ app.post("/api/persons", (request, response) => {
     personEntry.length < 1
   ) {
     persons = persons.concat(person);
-    response.json(person);
+    res.json(person);
   }
+});
+
+app.put("/api/persons/:id", (req, res) => {
+  const id = Number(req.params.id);
+  const body = req.body;
+  const person = persons.find((p) => p.name === body.name);
+  const updatedPerson = {...person, number: body.number};
+  const personsCopy = [...persons];
+  persons = personsCopy.map((p) =>
+    p.id !== updatedPerson.id ? p : updatedPerson
+  );
+  res.json(updatedPerson);
 });
 
 app.get("/info", (req, res) => {
@@ -98,10 +108,10 @@ app.get("/info", (req, res) => {
   );
 });
 
-app.post("/info", (request, response) => {
-  const body = request.body;
+app.post("/info", (req, res) => {
+  const body = req.body;
   if (!body.content) {
-    return response.status(400).json({
+    return res.status(400).json({
       error: "content missing",
     });
   }
@@ -109,7 +119,7 @@ app.post("/info", (request, response) => {
     content: body.content,
     date: body.date,
   };
-  response.json(INFO);
+  res.json(INFO);
 });
 
 const requestLogger = (req, res, next) => {
