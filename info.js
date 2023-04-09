@@ -1,0 +1,4 @@
+exports.info = {
+  content: "",
+  date: "",
+};

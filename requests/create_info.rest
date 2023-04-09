@@ -1,0 +1,7 @@
+POST http://localhost:3001/info
+content-type: application/json
+
+{
+	"content": "Phonebook has info for 2 people",
+	"date": "3/2/12"
+}
