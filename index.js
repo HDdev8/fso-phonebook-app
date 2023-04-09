@@ -24,7 +24,8 @@ const requestTime = (req, res, next) => {
 app.use(requestTime);
 
 app.get("/", (request, response) => {
-  response.send("<h1>root</h1>");
+  // response.send("<h1>root</h1>");
+  response.json();
 });
 
 app.get("/api/persons", (request, response) => {
