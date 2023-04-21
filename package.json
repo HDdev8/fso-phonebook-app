@@ -1,7 +1,7 @@
 {
 	"name": "fso-phonebook-backend",
-	"version": "0.0.1",
-	"description": "The backend to FSO part 3.9",
+	"version": "0.1.0",
+	"description": "The backend to FSO part 3",
 	"main": "index.js",
 	"scripts": {
 		"start": "node index.js",
@@ -21,6 +21,9 @@
 		"morgan": "^1.10.0"
 	},
 	"devDependencies": {
+		"eslint": "^8.38.0",
+		"eslint-config-prettier": "^8.8.0",
+		"eslint-plugin-react": "^7.32.2",
 		"nodemon": "^2.0.22"
 	}
 }

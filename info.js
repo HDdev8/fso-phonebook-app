@@ -1,4 +1,0 @@
-exports.info = {
-  content: "",
-  date: "",
-};

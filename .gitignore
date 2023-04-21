@@ -112,3 +112,5 @@ typings/
 *copy.*
 *_.*
 *[0-9].*
+.hintrc
+.mongo.js
