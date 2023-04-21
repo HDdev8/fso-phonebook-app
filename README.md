@@ -18,6 +18,8 @@ This is one of my first projects built with React, and I enjoyed it as an altern
 
 ## Recent Projects
 
+Action Hero Memory Game: <https://hddev8.github.io/memory-game/>
+
 Todo List: <https://hddev8.github.io/todo-list/>
 
 Library Project: <https://hddev8.github.io/library-project/>
