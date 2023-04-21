@@ -104,4 +104,11 @@ typings/
 # TernJS port file
 .tern-port
 
+# VS Code
 .vscode/
+
+# Unused files
+*copy*.*
+*copy.*
+*_.*
+*[0-9].*

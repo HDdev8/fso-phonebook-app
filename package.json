@@ -1,23 +1,26 @@
 {
-  "name": "fso-phonebook-app-backend",
-  "version": "0.0.1",
-  "description": "The backend to FSO part 3.9",
-  "main": "index.js",
-  "scripts": {
-    "start": "node index.js",
-    "dev": "nodemon index.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build:ui": "rm -rf dist && cd ../fso-phonebook-frontend && npm run build && cp -r dist ../fso-phonebook-app",
-    "deploy:full": "npm run build:ui && git add . && git commit -m uibuild && git push"
-  },
-  "author": "hddev8",
-  "license": "MIT",
-  "dependencies": {
-    "cors": "^2.8.5",
-    "express": "^4.18.2",
-    "morgan": "^1.10.0"
-  },
-  "devDependencies": {
-    "nodemon": "^2.0.22"
-  }
+	"name": "fso-phonebook-backend",
+	"version": "0.0.1",
+	"description": "The backend to FSO part 3.9",
+	"main": "index.js",
+	"scripts": {
+		"start": "node index.js",
+		"dev": "nodemon index.js",
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"build:ui": "rm -rf dist && cd ../fso-phonebook-frontend && npm run build && cp -r dist ../fso-phonebook-backend",
+		"deploy:full": "npm run build:ui && git add . && git commit -m uibuild && git push"
+	},
+	"author": "hddev8",
+	"license": "MIT",
+	"dependencies": {
+		"cors": "^2.8.5",
+		"dotenv": "^16.0.3",
+		"express": "^4.18.2",
+		"mongodb": "5.2",
+		"mongoose": "^7.0.3",
+		"morgan": "^1.10.0"
+	},
+	"devDependencies": {
+		"nodemon": "^2.0.22"
+	}
 }
