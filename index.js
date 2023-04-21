@@ -1,5 +1,4 @@
 require("dotenv").config();
-const assert = require("assert");
 const URL = process.env.MONGODB_URI;
 const PORT = process.env.PORT;
 const mongoose = require("mongoose");
@@ -48,7 +47,7 @@ app.get("/api/persons", (req, res) => {
 	});
 });
 
-app.get("/api/persons/:id", (req, res) => {
+app.get("/api/persons/:id", (req, res, next) => {
 	Person.findById(req.params.id)
 		.then((person) => {
 			if (person) {
@@ -62,7 +61,6 @@ app.get("/api/persons/:id", (req, res) => {
 
 app.post("/api/persons", (req, res, next) => {
 	const body = req.body;
-	let err;
 
 	if (body.name === undefined || body.number === undefined) {
 		return res.status(400).json({error: "name or number missing"});

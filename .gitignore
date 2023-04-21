@@ -113,4 +113,6 @@ typings/
 *_.*
 *[0-9].*
 .hintrc
-.mongo.js
+hintrc
+*hintrc
+mongo.js

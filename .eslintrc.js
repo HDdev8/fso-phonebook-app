@@ -9,8 +9,12 @@ module.exports = {
 	parserOptions: {
 		ecmaVersion: "latest",
 	},
-	plugins: ["react"],
 	rules: {
 		"linebreak-style": ["error", "unix"],
+		eqeqeq: "error",
+		"no-trailing-spaces": "error",
+		"object-curly-spacing": ["error", "never"],
+		"arrow-spacing": ["error", {before: true, after: true}],
+		"no-console": 0,
 	},
 };
