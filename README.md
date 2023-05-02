@@ -1,12 +1,12 @@
 # Phonebook
 
-Fullstack site/app built with React, Node, Express, and MongoDB
+Fullstack app built with React, Node.js / Express, and MongoDB / Mongoose
 
 **Link to project:** <https://fso-phonebook-app.onrender.com>
 
 ## How It's Made
 
-**Tech used:** React, Node, Express, MongoDB, Vite
+**Tech used:** React, Node.js, Express, MongoDB, Mongoose, and Vite
 
 ## Optimizations
 
