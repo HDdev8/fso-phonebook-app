@@ -14,7 +14,7 @@ This is a simple app that allows for creating, reading, updating, and deleting p
 
 ## Lessons Learned
 
-This is one of my first projects built with React, and I enjoyed it as an alternative to plain JavaScript. I'm really looking forward to spending more time with it. I had fun learning how to build the backend, and I especially liked using a real database for the first time. Building a React site/app with Vite is so much nicer than using Webpack. I'm really getting a feel for the JavaScript ecosystem, such as how NPM works or how nice it is to have so many packages available.
+This is one of my first projects built with React, and I enjoyed it as an alternative to plain JavaScript. I'm really looking forward to spending more time with it. I had fun learning how to build the backend, and I especially liked using a real database for the first time. My experience with Vite has been really pleasant. I'm really getting a feel for the JavaScript ecosystem, such as how NPM works or how nice it is to have so many packages available.
 
 ## Recent Projects
 
